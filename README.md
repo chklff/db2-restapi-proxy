@@ -20,16 +20,16 @@ DB2 REST Proxy is a Node.js application providing a RESTful API interface for in
 
 ### Clone the Repository
 
-\```bash
+```bash
 git clone [your-repo-url]
 cd [your-repo-directory]
-\```
+```
 
 ### Setting Up Environment Variables
 
 Create a `.env` file in the root directory with the following content:
 
-\```plaintext
+```plaintext
 DB_USER=yourDatabaseUsername
 DB_PASSWORD=yourDatabasePassword
 DB_SERVER=yourDatabaseServer
@@ -37,13 +37,13 @@ DB_DATABASE=yourDatabaseName
 DB_PORT=yourDatabasePort
 PORT=applicationPort
 TRUST_SERVER=booleanValue
-\```
+```
 
 ### Install Dependencies
 
-\```bash
+```bash
 npm install
-\```
+```
 
 ## Usage
 
@@ -53,9 +53,9 @@ npm install
 
 For a smooth and hassle-free setup, run the application using Docker Compose. This method automatically sets up the environment, builds the Docker image (if not already built), and starts the application. Run:
 
-\```bash
+```bash
 docker compose up --build
-\```
+```
 
 After running this command, your DB2 REST Proxy will be available at `http://localhost:5478`.
 
@@ -63,9 +63,9 @@ After running this command, your DB2 REST Proxy will be available at `http://loc
 
 If you prefer to start the server manually using Node.js, run:
 
-\```bash
+```bash
 npm start
-\```
+```
 
 This will launch the DB2 REST Proxy at `http://localhost:5478`.
 
@@ -77,9 +77,9 @@ This will launch the DB2 REST Proxy at `http://localhost:5478`.
 - **Method:** GET
 - **Description:** Tests the connection to the database and returns a list of available tables.
 
-\```bash
+```bash
 curl --location --request GET 'http://yourserver:5478/test-db'
-\```
+```
 
 ### Execute Query
 
@@ -89,11 +89,11 @@ curl --location --request GET 'http://yourserver:5478/test-db'
 - **Content-Type:** application/json
 - **Description:** Executes the provided SQL query and returns the result.
 
-\```bash
+```bash
 curl --location --request POST 'http://yourserver:5478/query' --header 'Content-Type: application/json' --data-raw '{
   "sql": "SELECT * FROM your_table;"
 }'
-\```
+```
 
 ## Security and Best Practices
 
