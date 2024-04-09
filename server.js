@@ -25,7 +25,7 @@ app.post('/query', async (req, res) => {
 app.get('/test-db', async (req, res) => {
     ibmdb.open(dbConfig, function (err, conn) {
         if (err) return res.status(500).send(err.message);
-        conn.query('SELECT * FROM SYSCAT.TABLES FETCH FIRST 10 ROWS ONLY', function (err, data) {
+        conn.query("SELECT TABNAME FROM SYSCAT.TABLES WHERE TYPE='T'", function (err, data) {
             if (err) {
                 res.status(500).send(err.message);
             } else {
