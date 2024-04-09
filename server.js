@@ -11,13 +11,16 @@ app.post('/query', async (req, res) => {
         if (err) return res.status(500).send(err.message);
         conn.query(req.body.sql, function (err, data) {
             if (err) {
-                res.status(500).send(err.message);
+                res.status(500).json({
+                    error: err.message,
+                    message: 'Failed to execute SQL query'
+                });
             } else {
-                res.json(data);
+                res.status(200).json({
+                    message: 'SQL command completed successfully',
+                    data: data
+                });
             }
-            conn.close(function () {
-                console.log('Connection closed.');
-            });
         });
     });
 });
@@ -29,6 +32,7 @@ app.get('/test-db', async (req, res) => {
             if (err) {
                 res.status(500).send(err.message);
             } else {
+                console.log(res)
                 res.json(data);
             }
             conn.close(function () {
