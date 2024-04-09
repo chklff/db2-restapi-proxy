@@ -36,7 +36,6 @@ DB_SERVER=yourDatabaseServer
 DB_DATABASE=yourDatabaseName
 DB_PORT=yourDatabasePort
 PORT=applicationPort
-TRUST_SERVER=booleanValue
 ```
 
 ### Install Dependencies
@@ -49,15 +48,6 @@ npm install
 
 ### Running the Application
 
-#### With Docker Compose (Recommended)
-
-For a smooth and hassle-free setup, run the application using Docker Compose. This method automatically sets up the environment, builds the Docker image (if not already built), and starts the application. Run:
-
-```bash
-docker compose up --build
-```
-
-After running this command, your DB2 REST Proxy will be available at `http://localhost:5478`.
 
 #### With Node.js
 
